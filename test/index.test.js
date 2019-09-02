@@ -2,6 +2,7 @@ const sum = require('./sum');
 import { shallow } from 'enzyme';
 import React from 'react';
 import App from '../src/index';
+import Test from '../src/components/test';
 test('adds 1 + 2 to equal 3', () => {
     expect(sum(1, 2)).toBe(3);
 });
@@ -26,4 +27,11 @@ describe('Test App', () => {
         wrapper.find('button').simulate('click');
         expect(wrapper.find('s').text()).toEqual("100");
     })
+});
+
+describe('Test App', () => {
+    it('Test App"', () => {
+        const app = shallow(<Test text="123"/>);
+        expect(app.text()).toEqual('123');
+    });
 });

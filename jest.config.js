@@ -3,6 +3,10 @@ module.exports = {
     transform: {
       '^.+\\.(js|jsx|mjs)$': '<rootDir>/node_modules/babel-jest',
     },
+    "moduleNameMapper": {
+      "^components(.*)$": "<rootDir>/src/components$1",
+    },
+    "testRegex": "./test/.*.test.js$",
     testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'], //转换时需忽略的文件
     testURL: 'http://localhost/', // 运行环境下的URl
   };
